@@ -1,0 +1,151 @@
+# incluem <stdio.h>
+# incluem <stdlib.h>
+criação de vazio();
+exibição de vazio();
+insert_beg vazio();
+insert_end nulo();
+insert_at_loc anular();
+count_node vazio();
+exclusão do vazio();
+nó de estrutura{
+ int dados;
+ nó de estrutura *próximo;
+};
+nó de estrutura *start=NULL;
+int principal()
+{
+	int c;
+ criar();
+	while(1){
+ printf ("\n Opções disponíveis:");
+	   printf("1.DISPLAY\n 2.INSERT AT BEGINNING\n 3.INSERT AT END\n 4.INSERT AT LOCATION\n 5.COUNT\n 6.DELETE\n");	
+ printf ("\n Digite sua escolha");
+ scanf ("%d",&c);
+	   switch(c){
+ caso 1: display();
+ quebrar;
+ caso 2: insert_beg();
+ quebrar;
+ caso 3: insert_end();
+ quebrar;
+ caso 4: insert_at_loc();
+ quebrar;
+ caso 5: count_node();
+ quebrar;
+ caso 6: excluir();
+ quebrar;
+        }
+   }
+ retorno 0;
+}
+criar vazio()
+{
+	int n,item,i=1;
+ printf ("Digite o valor de n");
+ scanf ("%d",&n);
+ nó de estrutura *p;
+	p=(struct node*)malloc(sizeof(struct node));
+    start=p;
+ printf ("\n Digite os dados do nó");
+ scanf ("%d",&item);
+    p->data=item;
+    p->next=NULL;
+ para(i=2;i<=n;i++)
+	{
+ printf ("\n Digite os dados do nó");
+ scanf ("%d",&item);
+ p->next = (struct node*)malloc (sizeof(nó de estrutura));
+		p=p->next;
+		p->data=item;
+		p->next=NULL;
+	}
+}
+exibição de vazio()
+{
+ nó de estrutura *p=start;
+	while(p!=NULL){
+		printf("%d->",p->data);
+		p=p->next;
+	}
+}
+void insert_beg()
+{
+	int item;
+	printf("\n Enter the data to be inserted");
+	scanf("%d",&item);
+	struct node *temp;
+	temp=(struct node*)malloc(sizeof(struct node));
+	temp->data= item;
+	temp->next=start;
+	start=temp;
+}
+void insert_end()
+{
+	struct node *p=start,*temp;
+	int item;
+	printf("\n Enter the data to be inserted");
+	scanf("%d",&item);
+	temp=(struct node*)malloc(sizeof(struct node));
+	temp->data=item;
+	temp->next=NULL;
+	while(p->next!=NULL)
+	{
+		p=p->next;
+	}
+	p->next=temp;
+}
+void insert_at_loc()
+{
+	int i,item,loc;
+	printf("Enter the data to be inserted\n");
+	scanf("%d",&item);
+	printf("\n Enter the location");
+	scanf("%d",&loc);
+	struct node *p=start,*temp;
+	temp=(struct node*)malloc(sizeof(struct node));
+	temp->data=item;
+	for(i=1;i<loc;i++)
+	{
+		p=p->next;
+    }
+	temp->next=p->next;	
+	p->next=temp;
+}
+void count_node()
+{
+	int count=0;
+	struct node *p=start;
+	while(p!=NULL)
+	{
+		count=count+1;
+		p=p->next;
+	}
+ printf("Contagem de nó : %d",contagem);
+}
+exclusão de vazio()
+{
+ item int;
+ nó de estrutura *p=start,*velho;
+ printf ("Digite o item a ser excluído\n");
+ scanf ("%d",&item);
+ enquanto (p!=NULL)
+	{
+ se (p->data ==item){
+ se (p===start){
+				start=p->next;
+ livre(p);
+ voltar;
+			}
+ outra coisa{
+				old->next=p->next;
+ livre(p);
+ voltar;
+			}
+		}
+ mais
+		{
+			old=p;
+			p=p->next;
+		}
+	}
+}
