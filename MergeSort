@@ -1,0 +1,56 @@
+# incluem <stdio.h>
+vazio merge_sort (int a[],int baixo,int alto);
+mesclagem vazio (int a[],int baixo, int mid, int high);
+int principal(){
+	int arr[1000],n,i;
+ printf ("\n Digite o número de elementos a serem classificados");
+ scanf ("%d",&n);
+ printf ("\n Digite os elementos");
+ para(i=0;i<n;i++){
+		scanf("%d",&arr[i]);
+	}
+ printf ("\n A matriz classificada é");
+	merge_sort(arr,0,n-1);
+ para(i=0;i<n;i++){
+ printf ("\n%d",arr[i]);
+	}
+ retorno 0;
+}
+vazio merge_sort (int a[],int baixo,int alto){
+	int mid;
+ médio = (baixo+alto)/2;
+ se (baixo!=alto){
+ merge_sort(a,baixo,médio);
+		merge_sort(a,mid+1,high);
+ mesclagem(a,baixo,médio,alto);
+	}
+}
+mesclagem vazio (int a[],int baixo, int mid, int high){
+	int f=low,s=mid+1,t=low,temp[1000],i,j;
+	while(f<=mid && s<=high){
+ se (a[f]<=a[s]{{
+			temp[t]=a[f];
+			f=f+1;
+		}
+ outra coisa{
+			temp[t]=a[s];
+			s=s+1;
+		}
+	    t=t+1;
+	}
+ se(f>mid){
+ para(i=s;i<=high;i++){
+			temp[t]=a[i];
+			t=t+1;
+		}
+	}
+ outra coisa{
+ para(i=f;i<=mid;i++){
+			temp[t]=a[i];
+			t=t+1;
+		}
+	}
+ para(j=baixo;j<=high;j++){
+		a[j]=temp[j];
+	}
+}
