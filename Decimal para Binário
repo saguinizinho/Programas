@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int principal ()
+{
+int a[100],i=0,j,num,rem;
+printf ("Digite um número em decimal : \n");
+scanf("%d",&num);
+while(num!=0)
+      {
+ 	    rem=num%2;
+ 	    num=num/2;
+ 	    a[i]=rem;
+ 	    i++;
+      }
+printf ("O binário do número decimal dado é : \n");
+ para(j=i-1;j>=0;j--)
+      printf("%d",a[j]);
+retorno 0;
+}
