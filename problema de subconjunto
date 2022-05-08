@@ -1,0 +1,31 @@
+#include <stdio.h>
+bool isSubsetSum(int set[], int n, int sum)
+{ 
+ subconjunto bool[n + 1][soma + 1]; 
+ para (int i = 0; i <= n; i++) 
+ subconjunto[i][0] = verdadeiro; 
+ para (int i = 1; i <= soma; i++) 
+ subconjunto[0][i] = falso;
+ para (int i = 1; i <= n; i++) { 
+ para (int j = 1; j <= soma; j++) { 
+ se (j < definir[i - 1]) 
+ subconjunto[i][j] = subset[i - 1][j]; 
+ se (j >= set[i - 1]) 
+ subconjunto[i][j] = subset[i - 1][j] 
+ || subconjunto[i - 1][j - set[i - 1]] ; 
+        } 
+    }
+ subconjunto de retorno[n][soma];
+ }
+
+int principal() 
+{ 
+    int set[] = { 3, 34, 4, 12, 5, 2 }; 
+ soma int = 9; 
+    int n = sizeof(set) / sizeof(set[0]); 
+ se (isSubsetSum(conjunto, n, soma) == verdadeiro) 
+ printf ("Encontrei um subconjunto com soma dada"); 
+ mais
+ printf ("Sem subconjunto com soma dada"); 
+ retorno 0; 
+}
