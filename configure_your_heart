@@ -1,0 +1,69 @@
+/*criando forma cardíaca usando * com dimensões inseridas pelo usuário*/
+#include<stdio.h>
+vazio principal()
+{
+	int wid, len,m,x,y,i,j,max,c=0;
+ printf ("\n A razão de comprimento para amplitude não deve exceder 1/2");
+ printf ("\n Digite a largura e o comprimento ");
+ scanf ("%d%d",&wid,&len);
+ se (wid%2==0)
+	m=2;
+ mais
+	m=1;
+	max=wid>len?wid:len;
+ enquanto (max>10)
+	{
+		max-=10;
+		c++;
+	}
+ enquanto (c>0)
+	{
+		m++;
+		c--;
+	}
+	x=(wid-m)/2;
+	y=len-x;
+ para(i=1;i<=len;i++)
+	{
+		printf("                      ");
+ para(j=1;j<=wid;j++)
+		{
+ se(i==1)
+			{
+ se ((j>x)&&(j<=x+m))
+				printf("  ");
+ mais
+				printf(" *");
+			}
+ mais se (i==2)
+			{
+ se((j>x)&&(j<=x+m)|| (j==1)|| (j==wid))
+				printf(" *");
+ mais
+				printf("  ");
+			}
+ mais se ((i>2)&&(i<=y))
+			{
+ se ((j==1)|| (j==wid))
+				printf(" *");
+ mais
+				printf("  ");
+			}
+ mais se ((i>y)&&(i!=len))
+			{
+ se(i+1-y===j)|| (i-y===wid-j))
+				printf(" *");
+ mais
+				printf("  "); 
+			}
+ mais se (i==len)
+			{
+ se(j>x)&&(j<=x+m))
+				printf(" *");
+ mais
+				printf("  ");
+			}
+		}
+ printf ("\n");
+	}
+}
